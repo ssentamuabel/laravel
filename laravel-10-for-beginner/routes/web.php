@@ -19,20 +19,36 @@ Route::get('/', function () {
 
 
     // get all the users
-    $users = DB::select("SELECT * FROM users");
+    // $users = DB::select("SELECT * FROM users");
+   $users = DB::table('users')->find(5);
 
     // INSERT NEW USER
-    // $user = DB::insert("INSERT INTO users (name, email, password) VALUES(?, ?, ?)", ['abel', 'abel@gmail.com', 'password']);
+    // $insert = DB::insert("INSERT INTO users (name, email, password) VALUES(?, ?, ?)", ['abel', 'abel@gmail.com', 'password']);
+    // $insert = DB::table('users')->insert([
+    //     'name'=>'Kasibante',
+    //     'email'=> 'kasibante@gmail.com',
+    //     'password'=>'password'
+    // ]);
+
 
 
     // UPDATE USER
-    // $user = DB::update("UPDATE users SET email=? WHERE id=? ", [
+    // $update = DB::update("UPDATE users SET email=? WHERE id=? ", [
     //     'abel@gmail.com',
     //     2
     // ]);
 
+    // $update = DB::table('users')->where('id', 5)->update([
+    //     'email' => 'grace@kyu.ac.ug'
+    // ]);
+
     // DELETE A USER
-    // $user_to_delete = DB::delete("DELETE FROM users WHERE id=2");
+    // $delete = DB::delete("DELETE FROM users WHERE id=2");
+    // $delete =  DB::table('users')->where('id',1 )->delete();
+
+
+
+
     dd($users);
 });
 
