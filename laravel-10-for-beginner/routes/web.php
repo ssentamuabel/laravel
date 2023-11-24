@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Models\User;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -20,13 +22,25 @@ Route::get('/', function () {
 
     // get all the users
     // $users = DB::select("SELECT * FROM users");
-   $users = DB::table('users')->find(5);
+    // $users = DB::table('users')->find(5);
+    $users = User::all();  // or $users = User::get();
+    // $users = User::where('id', 5)->first();
+    
+
 
     // INSERT NEW USER
+
     // $insert = DB::insert("INSERT INTO users (name, email, password) VALUES(?, ?, ?)", ['abel', 'abel@gmail.com', 'password']);
+
     // $insert = DB::table('users')->insert([
     //     'name'=>'Kasibante',
     //     'email'=> 'kasibante@gmail.com',
+    //     'password'=>'password'
+    // ]);
+
+    // $create = User::create([
+    //     'name'=>'Jonathan',
+    //     'email'=> 'jona@gmail.com',
     //     'password'=>'password'
     // ]);
 
@@ -42,12 +56,25 @@ Route::get('/', function () {
     //     'email' => 'grace@kyu.ac.ug'
     // ]);
 
+    // $update = User::where('id', 7)->first();
+    // $update = User::find(7);
+
+    // $update->update([
+    //         'email' => 'abc@kyu.ac.ug'
+    // ]);
+
+
+
+
+
+
     // DELETE A USER
     // $delete = DB::delete("DELETE FROM users WHERE id=2");
     // $delete =  DB::table('users')->where('id',1 )->delete();
 
+    $deleteUser = User::find(7);
 
-
+    $deleteUser->delete();
 
     dd($users);
 });
