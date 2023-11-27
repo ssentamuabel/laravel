@@ -12,8 +12,7 @@
  
 
     <form method="post" action="/profile/avatar" class="mt-6 space-y-6">
-        @csrf
-        @method('patch')
+       
 
       
         <div>
