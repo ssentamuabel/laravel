@@ -16,13 +16,13 @@ use App\Models\User;
 */
 
 Route::get('/', function () {
-    // return view('welcome');
+    return view('welcome');
 
 
     // get all the users
     // $users = DB::select("SELECT * FROM users");
 //    $users = User::all();
-    $user = User::find(9);
+    // $user = User::find(9);
 
     // INSERT NEW USER
     // $insert = DB::insert("INSERT INTO users (name, email, password) VALUES(?, ?, ?)", ['abel', 'abel@gmail.com', 'password']);
@@ -32,11 +32,11 @@ Route::get('/', function () {
     //     'password'=>bcrypt('password')
     // ]);
 
-    $insert = User::create([
-        'name'=>'User3',
-        'email'=> 'user3@gmail.com',
-        'password'=>'password'
-    ]);
+    // $insert = User::create([
+    //     'name'=>'User3',
+    //     'email'=> 'user3@gmail.com',
+    //     'password'=>'password'
+    // ]);
 
 
 
@@ -57,7 +57,7 @@ Route::get('/', function () {
 
 
 
-    dd($insert);
+    dd($user->name);
 });
 
 Route::get('/dashboard', function () {
